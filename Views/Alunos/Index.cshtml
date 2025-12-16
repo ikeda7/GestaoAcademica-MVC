@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVC.Models.Alunos>
+
+@{
+    ViewBag.Title = "Gerenciar Alunos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2>👨‍🎓 Lista de Alunos</h2>
+        <p class="text-muted">Gerencie os estudantes cadastrados no sistema.</p>
+    </div>
+    <p>
+        @Html.ActionLink("+ Novo Aluno", "Create", null, new { @class = "btn btn-success btn-lg shadow" })
+    </p>
+</div>
+
+<div class="table-container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nome do Aluno</th>
+                <th class="text-center" style="width: 350px;">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align: middle; font-weight: 500;">
+                        @Html.DisplayFor(modelItem => item.nomeAluno)
+                    </td>
+
+                    <td class="text-center align-middle">
+                        <div class="d-flex justify-content-center">
+                            <a href="@Url.Action("Edit", new { id = item.idAluno })" class="btn btn-primary btn-sm mr-2 shadow-sm" title="Editar">
+                                ✏️ <span class="d-none d-md-inline">Editar</span>
+                            </a>
+
+                            <a href="@Url.Action("Details", new { id = item.idAluno })" class="btn btn-info btn-sm mr-2 text-white shadow-sm" title="Detalhes">
+                                📄 <span class="d-none d-md-inline">Detalhes</span>
+                            </a>
+
+                            <a href="@Url.Action("Delete", new { id = item.idAluno })" class="btn btn-danger btn-sm shadow-sm" title="Excluir">
+                                🗑️
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

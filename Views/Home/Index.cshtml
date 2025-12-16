@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+    <h1 class="display-4" style="font-weight: 700; color: #2c3e50;">🚀 Portal Acadêmico</h1>
+    <p class="lead" style="color: #7f8c8d;">Sistema Integrado de Gestão - Por Lucas Ikeda</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card-custom">
+            <span class="card-icon">👨‍🎓</span>
+            <h3>Alunos</h3>
+            <p style="color: #95a5a6;">Gerencie matrículas e dados pessoais.</p>
+            <br />
+            <a href="@Url.Action("Index", "Alunos")" class="btn btn-primary btn-block">
+                Acessar Lista
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-custom">
+            <span class="card-icon">📚</span>
+            <h3>Disciplinas</h3>
+            <p style="color: #95a5a6;">Controle da grade e matérias.</p>
+            <br />
+            <a href="@Url.Action("Index", "Disciplinas")" class="btn btn-info btn-block" style="color: white;">
+                Acessar Grade
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-custom">
+            <span class="card-icon">🔗</span>
+            <h3>Matrículas</h3>
+            <p style="color: #95a5a6;">Vínculos entre alunos e matérias.</p>
+            <br />
+            <a href="@Url.Action("Index", "AlunosDisciplinas")" class="btn btn-success btn-block">
+                Gerenciar
+            </a>
+        </div>
+    </div>
+</div>
